@@ -1,0 +1,154 @@
+$dark: #141414;
+$light: #fff;
+$accent: #2D7D7D;
+$grey: #6d6d6d;
+$font-bold: Cera Round Pro Bold;
+$font-regular: Cera Round Pro Regular;
+$font-thin: Cera Round Pro Thin;
+
+* {
+  background-image: url("https://noa.ua/wp-content/themes/tomatina/img/bg-w-o3.png");
+}
+
+.bold-txt {
+  font-family: $font-bold;
+}
+
+footer {
+  margin-top: 100px;
+  color: $dark;
+}
+
+.footer-content {
+  width: 90%;
+  height: 400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-menu, .footer-menu-second, .footer-locations, .footer-calls-info, .footer-social-media, .footer-locations {
+  width: 20%;
+  height: 80%;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  //justify-content: space-around;
+  ul {
+    height: 100%;
+    padding: 0;
+  }
+
+  li {
+    list-style-type: none;
+  }
+}
+
+.footer-menu {
+  font-family: $font-bold;
+  text-transform: uppercase;
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
+
+.footer-menu-second {
+  height: 50%;
+  font-family: $font-regular;
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
+
+.footer-locations {
+  font-size: 16px;
+  font-family: $font-regular;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .footer-locations-lviv {
+    height: 60%;
+  }
+
+  .footer-locations-sokil {
+    height: 20%;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  li {
+    padding: 0;
+
+  }
+}
+
+.footer-calls-info {
+  font-family: $font-regular;
+  font-size: 16px;
+
+  .btn-icon {
+    margin-right: 10px;
+    margin-top: 14px;
+    position: relative;
+    display: inline-block;
+  }
+
+  .bg-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.footer-social-media {
+  margin-top: 14px;
+
+  span {
+    font-size: 15px;
+    font-family: $font-regular;
+    font-weight: 600;
+  }
+
+  img {
+    width: 46px;
+    height: 46px;
+  }
+}
+
+.social-media-block {
+  gap: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.footer-locations {
+  font-family: $font-regular;
+
+}
+
+
+.text-calls-info, .work-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.work-info-text {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+}

@@ -1,0 +1,71 @@
+$dark: #141414;
+$light: #f5f5f5;
+$accent: #2D7D7D;
+$grey: #6d6d6d;
+
+$font-bold: Cera Round Pro Bold;
+$font-regular: Cera Round Pro Regular;
+$font-thin: Cera Round Pro Thin;
+
+h2 {
+  font-size: 34px;
+  text-align: center;
+}
+
+* {
+  color: $dark;
+  font-family: $font-bold;
+}
+
+.color-accent {
+  color: $accent;
+}
+
+.content-dialog-delivery {
+  width: 80%;
+  height: 80%;
+  margin: 0 auto;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.buttons-delivery {
+  width: 90%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+}
+
+.type-delivery-button {
+  width: 226px;
+  height: 176px;
+  border: 1px solid $grey;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  img {
+    width: 98px;
+    height: 98px;
+    margin-bottom: 5px;
+  }
+}
+
+.button-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  span {
+    margin-top: 15px;
+    font-family: $font-regular;
+    font-size: 12px;
+  }
+}
+

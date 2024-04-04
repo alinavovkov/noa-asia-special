@@ -1,0 +1,45 @@
+@import 'ngx-toastr/toastr';
+@import 'app/shared/styles/theme-material';
+
+@font-face {
+  font-family: "Cera Round Pro Bold";
+  src: url("assets/fonts/TypeMates Cera Round Pro Bold.otf");
+}
+
+@font-face {
+  font-family: "Cera Round Pro Regular";
+  src: url("assets/fonts/TypeMates  CeraRoundProRegular.otf");
+}
+
+@font-face {
+  font-family: "Cera Round Pro Thin";
+  src: url("assets/fonts/TypeMates  CeraRoundProThin.otf");
+}
+$light: #fff;
+$accent: #2D7D7D;
+body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: $light;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $accent;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

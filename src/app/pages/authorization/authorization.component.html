@@ -1,0 +1,14 @@
+<div class="main-autorization">
+  <span>Admin Login</span>
+  <form class="form" [formGroup]="authForm" (ngSubmit)="loginUser()">
+    <div class="block">
+      <input type="text" placeholder="Email" name="email" formControlName="email">
+    </div>
+    <div class="block">
+      <input type="password" placeholder="Password" name="password" formControlName="password">
+    </div>
+
+    <button [disabled]="authForm.invalid" type="submit" class="login">Login</button>
+
+  </form>
+</div>

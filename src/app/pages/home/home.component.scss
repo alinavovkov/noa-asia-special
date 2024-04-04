@@ -1,0 +1,118 @@
+$dark: #141414;
+$light: #fff;
+$accent: #2D7D7D;
+$grey: #6d6d6d;
+$font-bold: Cera Round Pro Bold;
+$font-regular: Cera Round Pro Regular;
+$font-thin: Cera Round Pro Thin;
+
+.color-accent {
+  color: $accent;
+}
+
+* {
+  background-image: url("https://noa.ua/wp-content/themes/tomatina/img/bg-w-o3.png");
+}
+
+.home-content {
+  position: relative;
+  width: 100%;
+  height: 85vh;
+  overflow: hidden;
+}
+
+video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+}
+
+.main-home-content {
+  margin-top: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.details-info-restaurant {
+  width: 75%;
+  margin-top: 100px;
+  font-family: $font-regular;
+
+  p {
+    color: $grey;
+    font-size: 16px;
+  }
+}
+
+.asia-text {
+  font-size: 34px;
+  font-family: $font-bold;
+  font-weight: 700;
+  line-height: 1.2em;
+  color: $dark;
+}
+
+.read-more, .read-less {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  position: relative;
+  margin-top: 20px;
+  display: inline-block;
+  padding-right: 24px;
+  cursor: pointer;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  font-size: 14px;
+  line-height: 14px;
+  font-weight: 700;
+  transition: all .3s ease-in-out;
+}
+
+.read-more:before,
+.read-less:before {
+  content: "";
+  position: absolute;
+  right: 2px;
+
+  width: 10px;
+  height: 10px;
+  transition: all .3s ease-in-out;
+}
+
+.read-more {
+  color: #2d7d7d;
+}
+
+.read-less {
+  color: #db2526;
+}
+
+.read-more:before {
+  //top: 0px;
+  bottom: 6px;
+  border-left: 2px solid #2d7d7d;
+  border-bottom: 2px solid #2d7d7d;
+}
+
+.read-less:before {
+  top: 4px;
+  border-left: 2px solid #db2526;
+  border-bottom: 2px solid #db2526;
+}
+
+.read-more:before {
+  transform: rotate(-45deg);
+}
+
+.read-less:before {
+  transform: rotate(-225deg);
+}

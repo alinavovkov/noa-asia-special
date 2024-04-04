@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "noa-asia-special-3398c": {
+      "hosting": {
+        "noa": [
+          "noa-asia-special-3398c"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "noa-asia-special-3398c"
+  }
+}

@@ -1,0 +1,110 @@
+$dark: #141414;
+$light: #f5f5f5;
+$accent: #2D7D7D;
+$grey: #6d6d6d;
+$font-bold: Cera Round Pro Bold;
+$font-regular: Cera Round Pro Regular;
+$font-thin: Cera Round Pro Thin;
+$transparent: transparent;
+
+* {
+  font-family: $font-regular;
+  overflow-y: hidden;
+}
+
+.button {
+  padding: 5px;
+
+  display: flex;
+  justify-content: flex-end;
+}
+
+.close-button {
+  background-color: $transparent;
+  border: none;
+  width: 40px;
+  height: 40px;
+  font-size: 25px;
+}
+
+.main-autorization {
+  width: 500px;
+  height: 100%;
+  max-height: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+
+  a {
+    margin-bottom: 20px;
+
+  }
+}
+
+.form {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+  span {
+    // margin-top: 30px;
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
+  }
+}
+
+.form-group {
+  width: 90%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  // justify-content: space-between;
+  align-items: center;
+}
+
+.button-row-register {
+  width: 100%;
+  gap: 120px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.txt2 {
+  margin-bottom: 20px;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+.login-button {
+  width: 90%;
+  margin-bottom: 10px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+
+.row {
+  width: 90%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  div {
+    width: 48%;
+    gap: 5px;
+    display: flex;
+    justify-content: space-around;
+  }
+}

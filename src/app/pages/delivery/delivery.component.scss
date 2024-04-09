@@ -1,0 +1,276 @@
+$dark: #141414;
+$light: #f5f5f5;
+$accent: #2D7D7D;
+$grey: #6d6d6d;
+$transparent: transparent;
+$font-bold: Cera Round Pro Bold;
+$font-regular: Cera Round Pro Regular;
+$font-thin: Cera Round Pro Thin;
+
+h2 {
+  font-family: $font-regular;
+  font-size: 38px;
+  text-align: center;
+}
+
+.delivery-component {
+  width: 90%;
+  padding-top: 160px;
+  margin: 0 auto;
+  height: 430vh;
+  overflow: hidden;
+}
+
+.often-delivered, .popular-orders, .payment-delivery, .details-delivery-component {
+  width: 100%;
+  gap: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.often-delivered {
+
+}
+
+.popular-orders {
+
+}
+
+.all-menu-button {
+  width: 160px;
+  height: 33px;
+  font-size: 14px;
+  font-family: $font-bold;
+  text-transform: uppercase;
+  color: $light;
+  background: $accent;
+  border: 2px solid $accent;
+  border-radius: 6px;
+  //padding: 18px 30px;
+  transition: all 0.3s ease; /* Adjust timing and easing function as needed */
+
+}
+
+.all-menu-button:hover {
+  color: $accent;
+  background: $transparent;
+  border: 2px solid $accent;
+  border-radius: 6px;
+  //padding: 18px 30px;
+}
+
+.payment-delivery {
+  // height: 700px;
+}
+
+.content-delivery {
+  width: 100%;
+  // height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.left-img-delivery {
+  width: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.bike-img {
+  width: 100%;
+  height: 33%;
+
+  img {
+    width: 98px;
+    height: 98px;
+  }
+}
+
+.left-delivery {
+  width: 30%;
+  gap: 40px;
+}
+
+.block-zone {
+  margin-left: 20px;
+
+  span {
+    font-size: 26px;
+    font-family: $font-bold;
+  }
+
+  ul li {
+    font-family: $font-regular;
+    font-size: 16px;
+  }
+}
+
+.green-item {
+  color: #599921;
+}
+
+.red-item {
+  color: #ef2f3d;
+}
+
+.yellow-item {
+  color: #fc0;
+}
+
+.right-delivery-map {
+  width: 60%;
+  //height: 100%;
+
+  iframe {
+    width: 90%;
+    height: 90%;
+  }
+}
+
+.left-delivery, .right-delivery-map, .left-img-delivery {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.list-delivery {
+  list-style: none;
+  // padding-left: 40px;
+}
+
+ul {
+  padding-left: 0;
+}
+
+.list-delivery li {
+  position: relative;
+  padding-left: 40px;
+  margin-bottom: 10px;
+}
+
+.list-delivery li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.green-item-list li::before {
+  border: 2px solid #599921;
+}
+
+.red-item-list li::before {
+  border: 2px solid #ef2f3d;
+}
+
+.yellow-item-list li::before {
+  border: 2px solid #fc0;
+}
+
+.delivery-info {
+  width: 70%;
+  height: 100%;
+  text-align: left;
+  margin: 0;
+
+  h1 {
+    font-family: $font-thin;
+    color: $dark;
+    font-size: 46px;
+    margin: 0;
+  }
+
+  p {
+    font-family: $font-regular;
+    color: $grey;
+    font-size: 18px;
+  }
+}
+
+.details-delivery-component {
+  margin-top: 40px;
+
+  h1 {
+    font-family: $font-bold;
+    color: $dark;
+    font-size: 46px;
+    margin: 0;
+  }
+}
+
+.types-of-payment {
+  width: 100%;
+  gap: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.block-payment-method {
+  width: 30%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  img {
+    width: 75px;
+    height: 65px;
+  }
+}
+
+.info-payment {
+  width: 75%;
+
+  span {
+    font-family: $font-regular;
+    font-size: 22px;
+  }
+
+  p {
+    font-family: $font-thin;
+    font-size: 16px;
+
+  }
+}
+
+.delivery-text-block {
+  width: 80%;
+  margin: 0;
+
+  h1 {
+    font-family: $font-thin;
+    color: $dark;
+    margin-top: 20px;
+  }
+
+  p {
+    font-size: 18px;
+    color: $grey;
+    line-height: 1.5em;
+    margin: 0;
+    font-family: $font-regular;
+  }
+
+  ul {
+    // margin: 0;
+  }
+
+  ul li {
+    color: $grey;
+    line-height: 1.5;
+    margin: 0;
+  }
+}
+
+.accent-item-list li::before {
+  border: 2px solid $accent;
+}

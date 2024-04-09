@@ -8,8 +8,8 @@ import { ILogin } from '../../interfaces/account/account.interface';
   providedIn: 'root'
 })
 export class AccountService {
-  private baseUrl = 'http://localhost:3000';
-  private authUrl = `${this.baseUrl}/auth`;
+   private baseUrl = 'http://localhost:3000';
+   private authUrl = `${this.baseUrl}/auth`;
 
   public isUserLogin$ = new Subject<boolean>();
 

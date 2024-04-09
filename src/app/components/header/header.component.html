@@ -1,7 +1,7 @@
 <div class="header-info">
   <span>Тип доставки: </span>
-  <span class="type-delivery">Самовивіз</span>
-  <a  mat-button (click)="openDialog()">Натисніть тут, щоб змінити</a>
+  <span class="type-delivery">{{ selectedDeliveryType }}</span>
+  <a mat-button (click)="openDialog()">Натисніть тут, щоб змінити</a>
 </div>
 
 <header class="">
@@ -15,7 +15,7 @@
   <div class="header-menu">
     <a href="">МЕНЮ</a>
     <a href="">THAI MARKET</a>
-    <a href="">ДОСТАВКА</a>
+    <a href="" [routerLink]="[ '/delivery' ]" >ДОСТАВКА</a>
     <a href="">ДОНАТИМО РАЗОМ</a>
   </div>
   <div class="right-part-menu">
@@ -26,10 +26,16 @@
     <a href="" [routerLink]="[ '/favourites' ]">
       <img src="assets/img/favourite.png" alt="" class="img-fav">
     </a>
-    <a href="">
+    <div class="phone">
       <img src="assets/img/call.png" alt="" class="img-call">
-    </a>
-    <a href="" class="auth-block">
+      <div class="header-phone-info">
+        <div class="h6 title">
+          <a href="tel:+380677929090">+38 (067) 792 90 90 </a>
+        </div>
+        <p class="text">Працюємо Пн - Нд з <b>10:00</b> до <b>22:55</b></p>
+      </div>
+    </div>
+    <a class="auth-block" (click)="openLoginDialog()" aria-current="page">
       <img src="assets/img/user.svg" alt="" width="16px" height="20px">
       Вхід
     </a>
@@ -52,8 +58,7 @@
         </div>
       </div>
     </div>
-
-    <!--    </button>-->
   </div>
+
 </header>
 

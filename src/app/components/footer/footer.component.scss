@@ -15,13 +15,27 @@ $font-thin: Cera Round Pro Thin;
 }
 
 footer {
-  margin-top: 100px;
-  color: $dark;
+  //left: 0;
+  //bottom: 0;
+  ////bottom: 100px;
+  //color: $dark;
+  left: 0;
+  bottom: 0;
+  width: 95%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  height: 200px;
+  padding: 20px;
+  margin: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .footer-content {
   width: 90%;
   height: 400px;
+
   margin: 0 auto;
   display: flex;
   justify-content: space-between;

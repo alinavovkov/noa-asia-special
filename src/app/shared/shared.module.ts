@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
+import {MatDrawer, MatDrawerContainer, MatSidenavModule} from "@angular/material/sidenav";
+
 
 const MATERIAL = [
   MatDialogModule,
@@ -12,11 +13,15 @@ const MATERIAL = [
   MatInputModule,
   MatButtonModule,
   MatMenuModule,
+  MatDrawerContainer,
+  MatDrawer,
+  MatSidenavModule,
 ]
 
 // others
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import {HttpClientModule} from "@angular/common/http";
 
 
 @NgModule({
@@ -25,12 +30,13 @@ import { ReactiveFormsModule } from '@angular/forms';
     ...MATERIAL,
     FormsModule,
     ReactiveFormsModule,
-    CommonModule
+    HttpClientModule
   ],
   exports: [
     ...MATERIAL,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ]
 })
 export class SharedModule { }

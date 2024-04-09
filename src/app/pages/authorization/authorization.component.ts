@@ -13,7 +13,7 @@ import { ROLE } from '../../shared/constants/role.constante';
   templateUrl: './authorization.component.html',
   styleUrl: './authorization.component.scss'
 })
-export class AuthorizationComponent implements OnInit, OnDestroy{
+export class AuthorizationComponent implements OnInit, OnDestroy  {
 
   public authForm!: FormGroup;
   public loginSubscription!: Subscription;
@@ -59,9 +59,7 @@ export class AuthorizationComponent implements OnInit, OnDestroy{
     this.loginSubscription = docData(doc(this.afs, 'users', credential.user.uid)).subscribe(user => {
       const currentUser = { ...user, uid: credential.user.uid };
       localStorage.setItem('currentUser', JSON.stringify(currentUser));
-      if (user && user['role'] === ROLE.USER) {
-        this.router.navigate(['/cabinet']);
-      } else if (user && user['role'] === ROLE.ADMIN) {
+      if (user && user['role'] === ROLE.ADMIN) {
         this.router.navigate(['/admin']);
       }
       this.accountService.isUserLogin$.next(true);

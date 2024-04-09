@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-import { Auth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from '@angular/fire/auth';
-import { ToastrService } from 'ngx-toastr';
-import { doc, docData, Firestore, setDoc } from '@angular/fire/firestore';
-import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
-import { Subscription } from 'rxjs';
-import { MatDialogRef } from '@angular/material/dialog';
+import {Component, OnInit} from '@angular/core';
+import {Auth, createUserWithEmailAndPassword, signInWithEmailAndPassword} from '@angular/fire/auth';
+import {ToastrService} from 'ngx-toastr';
+import {doc, docData, Firestore, setDoc} from '@angular/fire/firestore';
+import {AbstractControl, FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {Router} from '@angular/router';
+import {Subscription} from 'rxjs';
+import {MatDialogRef} from '@angular/material/dialog';
 import {AccountService} from "../../shared/services/account/account.service";
 import {ROLE} from "../../shared/constants/role.constante";
 
@@ -17,6 +17,7 @@ export interface IRegister {
   password: string;
   confirmationPassword?: string;
 }
+
 @Component({
   selector: 'app-auth-dialog',
   templateUrl: './auth-dialog.component.html',
@@ -26,8 +27,11 @@ export class AuthDialogComponent implements OnInit {
 
   public authForm!: FormGroup;
   public regForm!: FormGroup;
+  public changePasswordForm!: FormGroup;
   private registerData!: IRegister;
   public isLogin = false;
+  public isChangePassword = false;
+
   private checkPassword = false;
 
   constructor(
@@ -39,13 +43,21 @@ export class AuthDialogComponent implements OnInit {
     private afs: Firestore,
     private toastr: ToastrService,
     private dialogRef: MatDialogRef<AuthDialogComponent>
-
-  ) { }
+  ) {
+  }
 
   ngOnInit(): void {
     this.initAuthForm();
     this.initRegForm();
+    this.initPassForm();
   }
+
+  initPassForm(): void {
+    this.changePasswordForm = this.fb.group({
+      email: [null, [Validators.required, Validators.email]],
+    })
+  }
+
   initAuthForm(): void {
     this.authForm = this.fb.group({
       email: [null, [Validators.required, Validators.email]],
@@ -58,15 +70,15 @@ export class AuthDialogComponent implements OnInit {
       email: [null, [Validators.required, Validators.email]],
       password: [null, [Validators.required]],
       firstName: [null, [Validators.required]],
-      lastName:  [null, [Validators.required]],
+      lastName: [null, [Validators.required]],
       phoneNumber: [null, [Validators.required]],
-      passwordReg:  [null, [Validators.required]],
-      confirmedPassword:  [null, [Validators.required]]
+      passwordReg: [null, [Validators.required]],
+      confirmedPassword: [null, [Validators.required]]
     })
   }
 
   loginUser(): void {
-    const { email, password } = this.authForm.value;
+    const {email, password} = this.authForm.value;
     this.login(email, password).then(() => {
       this.toastr.success('User successfully login');
       console.log(password);
@@ -79,7 +91,7 @@ export class AuthDialogComponent implements OnInit {
   async login(email: string, password: string): Promise<void> {
     const credential = await signInWithEmailAndPassword(this.auth, email, password);
     docData(doc(this.afs, 'users', credential.user.uid)).subscribe(user => {
-      const currentUser = { ...user, uid: credential.user.uid };
+      const currentUser = {...user, uid: credential.user.uid};
       localStorage.setItem('currentUser', JSON.stringify(currentUser));
       if (user && user['role'] === ROLE.USER) {
         this.router.navigate(['/cabinet']);
@@ -89,8 +101,9 @@ export class AuthDialogComponent implements OnInit {
       console.log('error', e);
     })
   }
+
   registerUser(): void {
-    const { email, passwordReg } = this.regForm.value;
+    const {email, passwordReg} = this.regForm.value;
     this.registerData = this.regForm.value;
     this.emailSignUp(email, passwordReg).then(() => {
       this.toastr.success('User successfully created');
@@ -118,9 +131,10 @@ export class AuthDialogComponent implements OnInit {
   changeIsLogin(): void {
     this.isLogin = !this.isLogin;
   }
+
   checkConfirmedPassword(): void {
     this.checkPassword = this.password.value === this.confirmed.value;
-    if(this.password.value !== this.confirmed.value) {
+    if (this.password.value !== this.confirmed.value) {
       this.regForm.controls['confirmedPassword'].setErrors({
         matchError: 'Password confirmation doesnt match'
       })
@@ -138,7 +152,12 @@ export class AuthDialogComponent implements OnInit {
   checkVisibilityError(control: string, name: string): boolean | null {
     return this.regForm.controls[control].errors?.[name]
   }
+
   onNoClick(): void {
     this.dialogRef.close();
+  }
+
+  changeIsChangePassword(): void {
+    this.isChangePassword = !this.isChangePassword;
   }
 }

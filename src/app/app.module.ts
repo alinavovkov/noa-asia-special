@@ -1,28 +1,28 @@
-import {NgModule} from '@angular/core';
-import {BrowserModule} from '@angular/platform-browser';
-import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
-import {AppRoutingModule} from './app-routing.module';
+import { AppRoutingModule } from './app-routing.module';
 
-import {AppComponent} from './app.component';
-import {AuthDialogComponent} from './components/auth-dialog/auth-dialog.component';
-import {FooterComponent} from './components/footer/footer.component';
-import {HeaderComponent} from './components/header/header.component';
+import { AppComponent } from './app.component';
+import { AuthDialogComponent } from './components/auth-dialog/auth-dialog.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { HeaderComponent } from './components/header/header.component';
 
-import {HomeComponent} from './pages/home/home.component';
-import {SharedModule} from './shared/shared.module';
-import {provideAnimationsAsync} from '@angular/platform-browser/animations/async';
-import {FavouriteComponent} from './pages/favourite/favourite.component';
-import {TypeDeliveryDialogComponent} from './components/type-delivery-dialog/type-delivery-dialog.component';
-import {ToastrModule} from "ngx-toastr";
+import { HomeComponent } from './pages/home/home.component';
+import { SharedModule } from './shared/shared.module';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { FavouriteComponent } from './pages/favourite/favourite.component';
+import { TypeDeliveryDialogComponent } from './components/type-delivery-dialog/type-delivery-dialog.component';
+import { ToastrModule} from "ngx-toastr";
 
-import {initializeApp, provideFirebaseApp} from '@angular/fire/app';
-import {getFirestore, provideFirestore} from '@angular/fire/firestore';
-import {getStorage, provideStorage} from '@angular/fire/storage';
-import {getMessaging, provideMessaging} from "@angular/fire/messaging";
-import {getAuth, provideAuth} from "@angular/fire/auth";
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+import { getStorage, provideStorage } from '@angular/fire/storage';
+import { getMessaging, provideMessaging } from '@angular/fire/messaging';
+import { getAuth, provideAuth} from '@angular/fire/auth';
 
-import {HttpClientModule} from "@angular/common/http";
+import {HttpClientModule} from '@angular/common/http';
 import { DeliveryComponent } from './pages/delivery/delivery.component';
 
 
@@ -35,7 +35,7 @@ import { DeliveryComponent } from './pages/delivery/delivery.component';
     HomeComponent,
     FavouriteComponent,
     TypeDeliveryDialogComponent,
-    DeliveryComponent,
+    DeliveryComponent
   ],
   imports: [
     BrowserModule,

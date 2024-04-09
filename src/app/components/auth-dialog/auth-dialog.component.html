@@ -2,7 +2,7 @@
   <button (click)="onNoClick()" class="close-button">✕</button>
 </div>
 <div class="main-autorization">
-  <form class="form" [formGroup]="authForm" *ngIf="!isLogin">
+  <form class="form" [formGroup]="authForm" *ngIf="!isLogin && !isChangePassword">
     <span>Вхід в кабінет</span>
 
     <div class="form-group">
@@ -20,13 +20,13 @@
             class="login-button">Увійти в кабінет
     </button>
     <div class="button-row-register">
-      <button mat-button color="accent" class="txt2" (click)="changeIsLogin()">Забули пароль?</button>
+      <button mat-button color="accent" class="txt2" (click)="changeIsChangePassword()">Забули пароль?</button>
       <button mat-button color="primary" class="txt2" (click)="changeIsLogin()">Не маєте акаунту?</button>
     </div>
   </form>
 
 
-  <form class="form" [formGroup]="regForm" *ngIf="isLogin">
+  <form class="form" [formGroup]="regForm" *ngIf="isLogin && !isChangePassword">
     <span>Зареєструватись</span>
     <div class="row">
       <div class="form-group">
@@ -81,5 +81,23 @@
     </button>
     <button mat-button color="primary" class="txt2" (click)="changeIsLogin()">Вже зареєстровані?
       <b>Увійти</b></button>
+  </form>
+
+  <form class="form" [formGroup]="changePasswordForm" *ngIf="isChangePassword">
+    <span>Відновити пароль</span>
+    <p>Після заповнення форми, ми надішлемо вам детальну інструкцію по відновленню паролю</p>
+    <div class="form-group">
+      <mat-form-field color="primary" appearance="outline">
+        <input matInput placeholder="Ваш email" type="email" formControlName="email"
+               class="input-authorization">
+      </mat-form-field>
+    </div>
+    <button mat-flat-button color="accent" type="button" *ngIf="!isLogin" mat-dialog-close
+            class="login-button">
+      Відновити пароль
+    </button>
+    <div class="button-row-register">
+      <button mat-button color="accent" class="txt2" (click)="changeIsChangePassword()">Повернутися до Входу</button>
+    </div>
   </form>
 </div>

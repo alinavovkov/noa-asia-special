@@ -1,4 +1,4 @@
-import {Component, OnInit, Input} from '@angular/core';
+import {Component, OnInit, Input, Inject} from '@angular/core';
 import { TypeDeliveryDialogComponent } from '../type-delivery-dialog/type-delivery-dialog.component';
 import {MatDialog, MatDialogRef} from '@angular/material/dialog';
 import {AuthDialogComponent} from "../auth-dialog/auth-dialog.component";
@@ -8,14 +8,15 @@ import {AuthDialogComponent} from "../auth-dialog/auth-dialog.component";
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
-
 export class HeaderComponent implements OnInit {
   @Input() selectedDeliveryType: string = ''; // Input property to receive the selected delivery type
   showFiller = false;
   private dialogOpened: boolean = false;
+   public isMenuActive: boolean = false;
 
   constructor(
-    public dialog: MatDialog
+    public dialog: MatDialog,
+  // @Inject('isMenuActive') public isMenuActive: boolean
   ) {}
   ngOnInit(): void {
     // this.openDialog();
@@ -47,5 +48,9 @@ export class HeaderComponent implements OnInit {
     })
   }
 
+  toggleMenu() {
+    this.isMenuActive = !this.isMenuActive;
+  }
 
 }
+

@@ -15,7 +15,7 @@
   <div class="header-menu">
     <a href="">МЕНЮ</a>
     <a href="">THAI MARKET</a>
-    <a href="" [routerLink]="[ '/delivery' ]" >ДОСТАВКА</a>
+    <a href="" [routerLink]="[ '/delivery' ]">ДОСТАВКА</a>
     <a href="" [routerLink]="['/donating']">ДОНАТИМО РАЗОМ</a>
   </div>
   <div class="right-part-menu">
@@ -53,9 +53,25 @@
               fill="#147070"></path>
           </g>
         </svg>
-        <div class="burger-btn">
-          <img src="assets/img/menu.png" alt="">
-        </div>
+
+        <button class="burger-btn" (click)="toggleMenu()" [ngClass]="{'active': isMenuActive}">
+          <img src="assets/img/menu.png" alt="" *ngIf="!isMenuActive">
+          <span *ngIf="isMenuActive">×</span>
+        </button>
+        <ul class="nav" [ngClass]="{'active': isMenuActive}">
+          <li class="nav__item">
+            <a class="nav__link" (click)="toggleMenu()">ПРО НАС</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" [routerLink]="[ '/delivery' ]">ДОСТАВКА</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" (click)="toggleMenu()">ВАКАНСІЇ</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" (click)="toggleMenu()">КОНТАКТИ</a>
+          </li>
+        </ul>
       </div>
     </div>
   </div>

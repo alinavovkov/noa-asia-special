@@ -1,0 +1,152 @@
+<div class="donating-content">
+  <h2>Донатимо разом</h2>
+  <div class="block-row">
+    <div class="block-img">
+      <img src="assets/img/noa1.png" alt="">
+    </div>
+    <div class="block-img">
+      <img src="assets/img/tomatina.png" alt="">
+    </div>
+    <div class="block-img">
+      <img src="assets/img/emily.png" alt="">
+    </div>
+    <div class="block-img">
+      <img src="assets/img/poke-lulu.png" alt="">
+    </div>
+    <div class="block-img">
+      <img src="assets/img/artboard-1-2.png" alt="">
+    </div>
+    <div class="block-img">
+      <img src="assets/img/ty.png" alt="">
+    </div>
+  </div>
+  <div class="counting" [@counting]="counterValue ">
+    <span class="accent-font-color big-txt"> {{ formatNumber(counterValue) }} </span>
+    <span class="grey-font-color small-txt">грн</span>
+  </div>
+
+  <div class="info-donating">
+    <h2>Як долучитись?</h2>
+    <p>
+      Звіт про допомогу ЗСУ
+      Завдяки вашій активній позиції ми досягли значних успіхів у підтримці наших захисників! Ми придбали <b>7 авто</b>
+      та переобладнали їх на <b>Бандеромобілі</b>, які вже несуть службу на передовій, захищаючи свободу кожного
+      українця.<br>
+
+      Завдяки акції «Страви Підтримки» нам вдалося зібрати кошти на <b>2 комплекти РЕБ</b> (радіоелектронної боротьби),
+      <b>Ecoflow</b>, фінансову допомогу <b>93 та 125 бригад, спорядження та одяг, паливо та газ для авто, фінансування
+      лікування військових, купівлю ноутбука, маскувальних сіток, ремонт автомобілів, газові грілки</b> для обігріву в
+      холодну пору року. <br>
+
+      Ми безмежно вдячні кожному, хто долучився до нашої спільної справи! 100% з продажу кожної страви з акції <b>«Страви
+      Підтримки» йдуть на допомогу ЗСУ. <br>
+
+      Разом ми сильніші! Разом ми – непереможні! <br>
+
+      Зробіть свій внесок у перемогу! Замовте страву підтримки та наближте омріяний мир!</b>
+    </p>
+  </div>
+  <div class="menu-items">
+    <div class="row">
+      <div class="cards">
+        <div class="card">
+          <img [routerLink]="[ '/product/']" src="assets/img/chop-sticks-500x500.webp" class="card-img-top" alt="...">
+          <div class="details-item-price">
+            <span class="txtTitle"><b>Палички патріотичні</b></span>
+            <span class="price"> <b> 299 </b> </span>
+          </div>
+
+          <div class="details-item-price">
+            <div class="counting-items">
+              <button (click)="decrement()">-</button>
+              <span id="counter-value" class="counter-value">{{ counter }}</span>
+              <button (click)="increment()">+</button>
+            </div>
+            <button class="more-about-discount">Замовити</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="photo-block">
+    <h2>Фотозвіт</h2>
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active carousel-indicator" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" class=" carousel-indicator" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" class=" carousel-indicator" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" class=" carousel-indicator" aria-label="Slide 4"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" class=" carousel-indicator" aria-label="Slide 5"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5" class=" carousel-indicator" aria-label="Slide 6"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="6" class=" carousel-indicator" aria-label="Slide 7"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="7" class=" carousel-indicator" aria-label="Slide 8"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="8" class=" carousel-indicator" aria-label="Slide 9"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="9" class=" carousel-indicator" aria-label="Slide 10"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="10" class=" carousel-indicator" aria-label="Slide 11"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="11" class=" carousel-indicator" aria-label="Slide 12"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="12" class=" carousel-indicator" aria-label="Slide 13"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="13" class=" carousel-indicator" aria-label="Slide 14"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="14" class=" carousel-indicator" aria-label="Slide 15"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="15" class=" carousel-indicator" aria-label="Slide 16"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="16" class=" carousel-indicator" aria-label="Slide 17"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="assets/img/donat.webp" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="assets/img/donat2.webp" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="assets/img/donat3.webp" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="assets/img/donat4.webp" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="assets/img/donat5.webp" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="assets/img/donat6.webp" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="assets/img/donat7.webp" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="assets/img/donat8.webp" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="assets/img/donat9.webp" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="assets/img/donat10.webp" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="assets/img/donat11.webp" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="assets/img/donat12.webp" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="assets/img/donat13.webp" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="assets/img/donat14.webp" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="assets/img/donat15.webp" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="assets/img/donat16.webp" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="assets/img/donat17.webp" class="d-block w-100" alt="...">
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>

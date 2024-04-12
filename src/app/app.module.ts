@@ -24,6 +24,7 @@ import { getAuth, provideAuth} from '@angular/fire/auth';
 
 import {HttpClientModule} from '@angular/common/http';
 import { DeliveryComponent } from './pages/delivery/delivery.component';
+import { DonatingComponent } from './pages/donating/donating.component';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { DeliveryComponent } from './pages/delivery/delivery.component';
     HomeComponent,
     FavouriteComponent,
     TypeDeliveryDialogComponent,
-    DeliveryComponent
+    DeliveryComponent,
+    DonatingComponent,
   ],
   imports: [
     BrowserModule,

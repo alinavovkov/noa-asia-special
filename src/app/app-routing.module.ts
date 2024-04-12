@@ -6,6 +6,7 @@ import { authGuard } from './shared/guards/auth/auth.guard';
 import {AuthorizationComponent} from "./pages/authorization/authorization.component";
 import {AdminComponent} from "./admin/admin.component";
 import {DeliveryComponent} from "./pages/delivery/delivery.component";
+import {DonatingComponent} from "./pages/donating/donating.component";
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -16,6 +17,7 @@ const routes: Routes = [
   },
   { path: 'admin', component: AdminComponent },
   { path: 'delivery', component: DeliveryComponent },
+  { path: 'donating', component: DonatingComponent },
 
 
 ];

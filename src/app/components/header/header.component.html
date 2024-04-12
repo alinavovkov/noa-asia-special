@@ -4,7 +4,7 @@
   <a mat-button (click)="openDialog()">Натисніть тут, щоб змінити</a>
 </div>
 
-<header class="">
+<header>
   <div class="header-logos">
     <a href="">
       <img loading="lazy"
@@ -13,8 +13,32 @@
     </a>
   </div>
   <div class="header-menu">
-    <a href="">МЕНЮ</a>
-    <a href="">THAI MARKET</a>
+    <div class="dropdown">
+      <button class="dropbtn">МЕНЮ</button>
+      <div class="dropdown-content">
+        <div class="menu-item" routerLink="['']">
+          <img src="assets/img/bike-1.svg" alt="">
+          <a>Link 1</a>
+        </div>
+        <div class="menu-item">
+          <img src="" alt="">
+          <a href="#">Link 1</a>
+        </div>
+      </div>
+    </div>
+    <div class="dropdown">
+      <button class="dropbtn">THAI MARKET</button>
+      <div class="dropdown-content">
+        <div class="menu-item" routerLink="['']">
+          <img src="assets/img/bike-1.svg" alt="">
+          <a>Link 1</a>
+        </div>
+        <div class="menu-item">
+          <img src="" alt="">
+          <a href="#">Link 1</a>
+        </div>
+      </div>
+    </div>
     <a href="" [routerLink]="[ '/delivery' ]">ДОСТАВКА</a>
     <a href="" [routerLink]="['/donating']">ДОНАТИМО РАЗОМ</a>
   </div>

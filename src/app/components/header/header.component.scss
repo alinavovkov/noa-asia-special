@@ -6,10 +6,13 @@ $font-bold: Cera Round Pro Bold;
 $font-regular: Cera Round Pro Regular;
 $font-thin: Cera Round Pro Thin;
 
-
-a, span, button {
-  color: $light;
+a {
   text-decoration: none;
+  color: $light;
+
+}
+span, button {
+  color: $light;
   font-size: 14px;
   font-weight: 500;
   font-family: $font-bold;
@@ -68,7 +71,7 @@ header {
 }
 
 .header-menu {
-  width: 29%;
+  width: 33%;
   height: 90%;
   display: flex;
   justify-content: space-between;
@@ -77,6 +80,13 @@ header {
 
   button {
     color: $light;
+  }
+  a {
+    font-family: $font-regular;
+    transition: 0.3s;
+  }
+  a:hover {
+    color: $accent;
   }
 }
 
@@ -201,7 +211,6 @@ header {
 
 header {
   display: flex;
-  justify-content: flex-end;
 }
 
 .burger-btn {
@@ -246,12 +255,12 @@ header {
   }
 
   li a {
-
     padding: 10px;
     color: $grey;
     font-size: 16px;
     font-family: $font-regular;
   }
+
   li a:hover {
     background-color: $accent;
     border-radius: 10px;
@@ -267,3 +276,70 @@ header {
   list-style-type: none;
 }
 
+.dropbtn {
+  background-color: transparent;
+  color: $light;
+  font-family: $font-regular;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  transition: 0.3s;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  min-height: 200px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  color: $accent;
+}
+
+.dropdown:hover .dropdown-content {
+  width: 500px;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.dropdown:hover .dropbtn {
+  color: $accent;
+}
+
+.menu-item {
+  margin: 20px;
+  width: 100px;
+  height: 200px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+
+  img {
+    width: 100px;
+    height: 100px;
+    margin-top: 10px;
+  }
+
+  a {
+    text-align: center;
+  }
+}

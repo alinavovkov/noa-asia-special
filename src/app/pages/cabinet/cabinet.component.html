@@ -1,8 +1,14 @@
 <main>
   <div class="topMenu">
-    <button [routerLink]="[ '/cabinet/personal-data' ]" class="menu-admin-button">Особисті дані</button>
-    <button [routerLink]="[ '/cabinet/order-history' ]" class="menu-admin-button">Історія замовлень</button>
-    <button [routerLink]="[ '/cabinet/change-password' ]" class="menu-admin-button">Зміна паролю</button>
+    <button [routerLink]="[ '/cabinet/personal-data' ]" class="menu-admin-button" [class.clicked]="personalDataClicked"
+            (click)="handlePersonalDataClick()">Особисті дані
+    </button>
+    <button [routerLink]="[ '/cabinet/order-history' ]" class="menu-admin-button" [class.clicked]="orderHistoryClicked"
+            (click)="handleOrderHistoryClick()">Історія замовлень
+    </button>
+    <button [routerLink]="[ '/cabinet/change-password' ]" class="menu-admin-button"
+            [class.clicked]="changePasswordClicked" (click)="handleChangePasswordClick()">Зміна паролю
+    </button>
     <button [routerLink]="[ '' ]" class="exit-button" (click)="logOut()">Вихід</button>
   </div>
   <div class="mainContent">

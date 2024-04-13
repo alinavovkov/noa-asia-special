@@ -1,0 +1,142 @@
+$dark: #141414;
+$light: #f5f5f5;
+$accent: #2D7D7D;
+$grey: #6d6d6d;
+$font-bold: Cera Round Pro Bold;
+$font-regular: Cera Round Pro Regular;
+$font-thin: Cera Round Pro Thin;
+
+* {
+  font-family: $font-regular;
+}
+
+.form {
+  width: 100%;
+  padding: 0 5px 5px 25px;
+}
+
+.form-group {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-title {
+  width: 25%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  h5 {
+    margin: 0 auto;
+    padding-left: 10px;
+  }
+}
+
+.form .form-title {
+  margin-bottom: 20px;
+}
+
+.number-title {
+  text-align: center;
+  margin: 0 auto;
+  width: 25px;
+  height: 25px;
+  border-radius: 5px;
+  background-color: $accent;
+  color: $light;
+}
+
+.title {
+  color: $dark;
+  font-weight: bold;
+}
+
+.form .input {
+  margin-bottom: 20px;
+}
+
+.input {
+  width: 100%;
+  font-size: 16px;
+  height: 56px;
+  border: 1px solid $light;
+  border-radius: 10px;
+  color: $dark;
+  line-height: 56px;
+  padding: 0 20px 0 23px;
+  -webkit-transition: 0.35s;
+  transition: 0.45s;
+  text-overflow: ellipsis;
+  outline: transparent;
+}
+.input:focus {
+  outline: 1px solid $accent;
+}
+.row-personal-info {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.first-name {
+  width: 45%;
+}
+
+.second-name {
+  width: 45%;
+
+}
+.addresses {
+  width: 100%;
+
+}
+.buttons {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.button-fully-bg {
+  min-width: 85px;
+  height: 45px;
+  padding: 8px;
+  background-color: $accent;
+  font-family: $font-regular;
+  color: $light;
+  border: none;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 16px;
+  margin-top: 30px;
+  transition: 0.3s;
+}
+.button-fully-bg:hover {
+  background-color: transparent;
+  color: $accent;
+  border: 1px solid $accent;
+}
+
+.button-border {
+  min-width: 85px;
+  height: 45px;
+  padding: 8px;
+  background-color: transparent;
+  color: $accent;
+  border: 1px solid $accent;
+  border-radius: 5px;
+  font-family: $font-regular;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 16px;
+  margin-top: 30px;
+  transition: 0.3s;
+}
+
+.button-border:hover  {
+  background-color: $accent;
+  color: $light;
+  border: none;
+}

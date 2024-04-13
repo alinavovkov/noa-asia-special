@@ -8,10 +8,9 @@ $font-thin: Cera Round Pro Thin;
 
 main {
   padding-top: 260px;
-  min-height: 200vh;
+  min-height: 180vh;
   margin: 0 auto;
   width: 80%;
-  border: 1px solid red;
 }
 
 .topMenu {
@@ -38,12 +37,20 @@ main {
     text-transform: uppercase;
     font-family: $font-regular;
   }
+  button.clicked {
+    background-color: $accent;
+    color: $light;
+    border: none;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-family: $font-regular;
+  }
 }
 
 
 .mainContent {
-  width: 90%;
+  width: 70%;
   height: 50vh;
   margin: 0 auto;
-  border: 1px solid pink;
+  padding-top: 30px;
 }

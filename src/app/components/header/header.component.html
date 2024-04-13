@@ -84,16 +84,16 @@
         </button>
         <ul class="nav" [ngClass]="{'active': isMenuActive}">
           <li class="nav__item">
-            <a class="nav__link" (click)="toggleMenu()">ПРО НАС</a>
+            <a class="nav__link" [routerLink]="[ '/about' ]">ПРО НАС</a>
           </li>
           <li class="nav__item">
             <a class="nav__link" [routerLink]="[ '/delivery' ]">ДОСТАВКА</a>
           </li>
           <li class="nav__item">
-            <a class="nav__link" (click)="toggleMenu()">ВАКАНСІЇ</a>
+            <a class="nav__link" [routerLink]="[ '/vacancies' ]">ВАКАНСІЇ</a>
           </li>
           <li class="nav__item">
-            <a class="nav__link" (click)="toggleMenu()">КОНТАКТИ</a>
+            <a class="nav__link" [routerLink]="[ '/contacts' ]">КОНТАКТИ</a>
           </li>
         </ul>
       </div>

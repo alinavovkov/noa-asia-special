@@ -26,7 +26,6 @@ import {HttpClientModule} from '@angular/common/http';
 import { DeliveryComponent } from './pages/delivery/delivery.component';
 import { DonatingComponent } from './pages/donating/donating.component';
 import { AboutComponent } from './pages/about/about.component';
-import { VacanciesComponent } from './pages/vacancies/vacancies.component';
 import { ContactsComponent } from './pages/contacts/contacts.component';
 
 
@@ -42,7 +41,6 @@ import { ContactsComponent } from './pages/contacts/contacts.component';
     DeliveryComponent,
     DonatingComponent,
     AboutComponent,
-    VacanciesComponent,
     ContactsComponent,
   ],
   imports: [

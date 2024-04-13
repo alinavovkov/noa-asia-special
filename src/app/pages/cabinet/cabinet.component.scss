@@ -1,0 +1,49 @@
+$dark: #141414;
+$light: #f5f5f5;
+$accent: #2D7D7D;
+$grey: #6d6d6d;
+$font-bold: Cera Round Pro Bold;
+$font-regular: Cera Round Pro Regular;
+$font-thin: Cera Round Pro Thin;
+
+main {
+  padding-top: 260px;
+  min-height: 200vh;
+  margin: 0 auto;
+  width: 80%;
+  border: 1px solid red;
+}
+
+.topMenu {
+  width: 45%;
+  height: 50px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  button {
+    background-color: rgba(128, 128, 128, 0.07);
+    color: $grey;
+    border: none;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-family: $font-regular;
+    transition: 0.3s;
+  }
+  button:hover {
+    background-color: $accent;
+    color: $light;
+    border: none;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-family: $font-regular;
+  }
+}
+
+
+.mainContent {
+  width: 90%;
+  height: 50vh;
+  margin: 0 auto;
+  border: 1px solid pink;
+}

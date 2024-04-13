@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { AuthorizationComponent } from './authorization.component';
 import {ReactiveFormsModule, FormsModule} from '@angular/forms';
+import {ToastrModule} from "ngx-toastr";
 
 describe('AuthorizationComponent', () => {
   let component: AuthorizationComponent;
@@ -11,7 +12,7 @@ describe('AuthorizationComponent', () => {
       declarations: [AuthorizationComponent],
       imports: [
         ReactiveFormsModule,
-        FormsModule
+        ToastrModule.forRoot(),
       ]
 
     })

@@ -27,6 +27,8 @@ import { DeliveryComponent } from './pages/delivery/delivery.component';
 import { DonatingComponent } from './pages/donating/donating.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ContactsComponent } from './pages/contacts/contacts.component';
+import {ReactiveFormsModule} from "@angular/forms";
+import { CabinetComponent } from './pages/cabinet/cabinet.component';
 
 
 @NgModule({
@@ -48,7 +50,6 @@ import { ContactsComponent } from './pages/contacts/contacts.component';
     BrowserAnimationsModule,
     AppRoutingModule,
     SharedModule,
-    HttpClientModule,
     ToastrModule.forRoot(),
     provideFirebaseApp(() => initializeApp({
       "projectId": "noa-asia-special-3398c",

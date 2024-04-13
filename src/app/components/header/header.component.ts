@@ -9,17 +9,16 @@ import {AuthDialogComponent} from "../auth-dialog/auth-dialog.component";
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent implements OnInit {
-  @Input() selectedDeliveryType: string = ''; // Input property to receive the selected delivery type
-  showFiller = false;
+  @Input() selectedDeliveryType: string = '';
+//  showFiller = false;
   private dialogOpened: boolean = false;
    public isMenuActive: boolean = false;
 
   constructor(
     public dialog: MatDialog,
-  // @Inject('isMenuActive') public isMenuActive: boolean
   ) {}
   ngOnInit(): void {
-    // this.openDialog();
+     this.openDialog();
   }
   openDialog(): void {
     this.dialog.open(TypeDeliveryDialogComponent, {

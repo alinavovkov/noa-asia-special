@@ -14,8 +14,8 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'favourites', component: FavouriteComponent },
   {
-    path: 'auth', component: AuthorizationComponent
-    // loadChildren: () => import('./pages/authorization/authorization.module').then(m => m.AuthorizationModule)
+    path: 'auth', component: AuthorizationComponent,
+     loadChildren: () => import('./pages/authorization/authorization.module').then(m => m.AuthorizationModule)
   },
   { path: 'admin', component: AdminComponent },
   { path: 'delivery', component: DeliveryComponent },
@@ -27,12 +27,18 @@ const routes: Routes = [
     path: 'vacancies',
     loadChildren: () => import('./pages/vacancies/vacancies.module').then(m => m.VacanciesModule)
   },
+  //{ path: 'cabinet', component: CabinetComponent },
+  {
+    path: 'cabinet',
+    canActivate: [authGuard],
+    loadChildren: () => import('./pages/cabinet/cabinet.module').then(m => m.CabinetModule)
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, {
     preloadingStrategy: PreloadAllModules,
-    scrollPositionRestoration: 'enabled'
+    //scrollPositionRestoration: 'enabled'
   })],
   exports: [RouterModule]
 })

@@ -6,6 +6,7 @@ import { AdminProductComponent } from './admin-product/admin-product.component';
 import { AdminOrderComponent } from './admin-order/admin-order.component';
 import { SharedModule } from '../shared/shared.module';
 import { AdminRoutingModule } from './admin-routing.module';
+import {RouterModule} from "@angular/router";
 
 
 
@@ -19,7 +20,8 @@ import { AdminRoutingModule } from './admin-routing.module';
   imports: [
     CommonModule,
     AdminRoutingModule,
-    SharedModule
+    SharedModule,
+    RouterModule
   ]
 })
 export class AdminModule { }

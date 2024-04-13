@@ -12,13 +12,11 @@ $transparent: transparent;
   font-family: $font-regular;
 }
 
-.main-autorization {
+.main-authorization {
   width: 20%;
-  height: 40vh;
+  height: 80vh;
   margin: 0 auto;
-  margin-top: 200px;
-  margin-bottom: 50px;
-
+  padding-top: 200px;
   display: flex;
   flex-direction: column;
 }

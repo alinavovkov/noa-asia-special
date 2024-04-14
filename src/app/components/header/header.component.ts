@@ -4,6 +4,11 @@ import {MatDialog, MatDialogRef} from '@angular/material/dialog';
 import {AuthDialogComponent} from "../auth-dialog/auth-dialog.component";
 import {ROLE} from "../../shared/constants/role.constante";
 import {AccountService} from "../../shared/services/account/account.service";
+import {ICategoryResponse} from "../../shared/interfaces/category/category.interface";
+import {ProductService} from "../../shared/services/product/product.service";
+import {IProductResponse} from "../../shared/interfaces/product/product.interface";
+import {CategoryService} from "../../shared/services/category/category.service";
+import {CategoryThaiService} from "../../shared/services/category-thai/category-thai.service";
 
 @Component({
   selector: 'app-header',
@@ -18,15 +23,23 @@ export class HeaderComponent implements OnInit {
   public loginPage = '';
   public isLogin = false;
   public loginUrl = '';
+  public categoriesItems: Array<ICategoryResponse> = [];
+  public categoriesThaiItems: Array<ICategoryResponse> = [];
 
   constructor(
     public dialog: MatDialog,
-    private accountService: AccountService
+    private accountService: AccountService,
+    private productService: ProductService,
+    private categoryService: CategoryService,
+    private categoryThaiService: CategoryThaiService,
+
   ) {}
   ngOnInit(): void {
      this.openDialog();
     this.checkUserLogin();
     this.checkUpdatesUserLogin();
+    this.getCategories();
+    this.getCategoriesThai()
   }
   openDialog(): void {
     this.dialog.open(TypeDeliveryDialogComponent, {
@@ -82,5 +95,20 @@ export class HeaderComponent implements OnInit {
     this.isMenuActive = !this.isMenuActive;
   }
 
+  getCategories(): void {
+    this.categoryService.getAllFirebase().subscribe(data => {
+      this.categoriesItems = data as IProductResponse[];
+      console.log(this.categoriesItems.map(category => category.path))
+
+    })
+  }
+
+  getCategoriesThai(): void {
+    this.categoryThaiService.getAllFirebase().subscribe(data => {
+      this.categoriesThaiItems = data as IProductResponse[];
+      console.log(this.categoriesThaiItems.map(category => category.path))
+
+    })
+  }
 }
 

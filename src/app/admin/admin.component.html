@@ -1,12 +1,15 @@
-<main>
-  <div class="leftMenu">
-    <button [routerLink]="[ '/admin/favourites' ]" class="menu-admin-button">Фаворити</button>
-    <button [routerLink]="[ '/admin/category' ]" class="menu-admin-button"> Категорії</button>
-    <button [routerLink]="[ '/admin/product' ]" class="menu-admin-button">Товари</button>
-    <button [routerLink]="[ '/admin/order' ]" class="menu-admin-button">Замовлення</button>
-    <button [routerLink]="[ '/' ]" class="exit-button" (click)="logOut()">Вихід</button>
-  </div>
-  <div class="mainContent">
-    <router-outlet></router-outlet>
+  <main>
+    <div class="leftMenu">
+      <button [routerLink]="[ '/admin/products-thai' ]" class="menu-admin-button">Товари Thai</button>
+      <button [routerLink]="[ '/admin/category' ]" class="menu-admin-button"> Категорії</button>
+      <button [routerLink]="[ '/admin/category-thai' ]" class="menu-admin-button"> Категорії Thai</button>
+
+      <button [routerLink]="[ '/admin/product' ]" class="menu-admin-button">Товари</button>
+      <button [routerLink]="[ '/admin/order' ]" class="menu-admin-button">Замовлення</button>
+      <button [routerLink]="[ '/' ]" class="exit-button" (click)="logOut()">Вихід</button>
+    </div>
+    <div class="mainContent">
+      <router-outlet></router-outlet>
   </div>
 </main>
+696

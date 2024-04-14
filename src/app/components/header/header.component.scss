@@ -11,6 +11,7 @@ a {
   color: $light;
 
 }
+
 span, button {
   color: $light;
   font-size: 14px;
@@ -81,10 +82,12 @@ header {
   button {
     color: $light;
   }
+
   a {
     font-family: $font-regular;
     transition: 0.3s;
   }
+
   a:hover {
     color: $accent;
   }
@@ -291,15 +294,12 @@ header {
   display: inline-block;
 }
 
-.dropdown-content {
+.dropdown-content, .dropdown-content-thai{
   display: none;
   position: absolute;
   background-color: #f1f1f1;
-  min-width: 160px;
-  min-height: 200px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
-
 }
 
 .dropdown-content a {
@@ -307,18 +307,40 @@ header {
   padding: 12px 16px;
   text-decoration: none;
   display: block;
-}
 
+}
 .dropdown-content a:hover {
   color: $accent;
 }
 
+.dropdown-content-thai a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+
+}
+
+.dropdown-content-thai a:hover {
+  color: $accent;
+}
+
+
+
 .dropdown:hover .dropdown-content {
-  width: 500px;
-  height: 100%;
+  width: 990px;
+  height: 500px;
   display: flex;
   flex-direction: row;
-  align-items: center;
+  flex-wrap: wrap;
+}
+
+.dropdown:hover .dropdown-content-thai {
+  width: 800px;
+  height: 210px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .dropdown:hover .dropbtn {
@@ -326,12 +348,16 @@ header {
 }
 
 .menu-item {
-  margin: 20px;
-  width: 100px;
+  margin: 5px;
+  padding: 10px;
+  width: 150px;
   height: 200px;
   cursor: pointer;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s;
 
   img {
     width: 100px;
@@ -340,6 +366,13 @@ header {
   }
 
   a {
+    font-size: 14px;
     text-align: center;
   }
 }
+
+.menu-item:hover {
+  background-color: $light;
+  color: $accent;
+}
+

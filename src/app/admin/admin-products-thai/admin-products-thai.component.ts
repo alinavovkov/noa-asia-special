@@ -8,11 +8,11 @@ import {ProductService} from "../../shared/services/product/product.service";
 import {CategoryService} from "../../shared/services/category/category.service";
 
 @Component({
-  selector: 'app-admin-product',
-  templateUrl: './admin-product.component.html',
-  styleUrl: './admin-product.component.scss'
+  selector: 'app-admin-products-thai',
+  templateUrl: './admin-products-thai.component.html',
+  styleUrl: './admin-products-thai.component.scss'
 })
-export class AdminProductComponent implements OnInit{
+export class AdminProductsThaiComponent implements OnInit{
   public adminProducts: Array<IProductResponse> = [];
   public adminCategories: Array<ICategoryResponse> = [];
 

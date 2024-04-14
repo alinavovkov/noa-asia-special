@@ -7,6 +7,9 @@ import { AdminOrderComponent } from './admin-order/admin-order.component';
 import { SharedModule } from '../shared/shared.module';
 import { AdminRoutingModule } from './admin-routing.module';
 import {RouterModule} from "@angular/router";
+import {AdminFavouriteComponent} from "./admin-favourite/admin-favourite.component";
+import { AdminProductsThaiComponent } from './admin-products-thai/admin-products-thai.component';
+import { AdminCatagoryThaiComponent } from './admin-catagory-thai/admin-catagory-thai.component';
 
 
 
@@ -15,7 +18,9 @@ import {RouterModule} from "@angular/router";
     AdminComponent,
     AdminCategoryComponent,
     AdminProductComponent,
-    AdminOrderComponent
+    AdminOrderComponent,
+    AdminProductsThaiComponent,
+    AdminCatagoryThaiComponent
   ],
   imports: [
     CommonModule,

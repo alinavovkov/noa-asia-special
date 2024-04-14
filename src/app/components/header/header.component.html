@@ -16,26 +16,18 @@
     <div class="dropdown">
       <button class="dropbtn">МЕНЮ</button>
       <div class="dropdown-content">
-        <div class="menu-item" routerLink="['']">
-          <img src="assets/img/bike-1.svg" alt="">
-          <a>Link 1</a>
-        </div>
-        <div class="menu-item">
-          <img src="" alt="">
-          <a href="#">Link 1</a>
+        <div class="menu-item" [routerLink]="'/product/'+[category.path]" *ngFor="let category of categoriesItems">
+          <img [src]="category.imagePath" alt="" [routerLink]="'/product/'+[category.path]">
+          <a [routerLink]="'/product/'+[category.path]">{{ category.name }}</a>
         </div>
       </div>
     </div>
     <div class="dropdown">
       <button class="dropbtn">THAI MARKET</button>
-      <div class="dropdown-content">
-        <div class="menu-item" routerLink="['']">
-          <img src="assets/img/bike-1.svg" alt="">
-          <a>Link 1</a>
-        </div>
-        <div class="menu-item">
-          <img src="" alt="">
-          <a href="#">Link 1</a>
+      <div class="dropdown-content-thai">
+        <div class="menu-item" [routerLink]="'/product/'+[categoryThai.path]" *ngFor="let categoryThai of categoriesThaiItems">
+          <img [src]="categoryThai.imagePath" alt="" [routerLink]="'/product/'+[categoryThai.path]">
+          <a [routerLink]="'/product/'+[categoryThai.path]">{{ categoryThai.name }}</a>
         </div>
       </div>
     </div>
@@ -59,11 +51,11 @@
         <p class="text">Працюємо Пн - Нд з <b>10:00</b> до <b>22:55</b></p>
       </div>
     </div>
-    <a class="auth-block" (click)="openLoginDialog()" aria-current="page"  *ngIf="!isLogin">
+    <a class="auth-block" (click)="openLoginDialog()" aria-current="page" *ngIf="!isLogin">
       <img src="assets/img/user.svg" alt="" width="16px" height="20px">
       Вхід
     </a>
-    <a  class="auth-block" [routerLink]="[ '/'+loginUrl ]" routerLinkActive="route-active"
+    <a class="auth-block" [routerLink]="[ '/'+loginUrl ]" routerLinkActive="route-active"
        aria-current="page" *ngIf="isLogin">
       <img src="assets/img/user.svg" alt="" width="16px" height="20px">
       {{ loginPage }}

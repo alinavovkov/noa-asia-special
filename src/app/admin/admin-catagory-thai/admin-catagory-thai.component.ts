@@ -5,14 +5,16 @@ import {CategoryService} from "../../shared/services/category/category.service";
 import {ToastrService} from "ngx-toastr";
 import { deleteObject, getDownloadURL, percentage, ref, Storage, uploadBytesResumable } from '@angular/fire/storage';
 import {ImageService} from "../../shared/services/image/image.service";
+import {CategoryThaiService} from "../../shared/services/category-thai/category-thai.service";
 
 @Component({
-  selector: 'app-admin-category',
-  templateUrl: './admin-category.component.html',
-  styleUrl: './admin-category.component.scss'
+  selector: 'app-admin-catagory-thai',
+  templateUrl: './admin-catagory-thai.component.html',
+  styleUrl: './admin-catagory-thai.component.scss'
 })
-export class AdminCategoryComponent implements OnInit{
-  public adminCategories: Array<ICategoryResponse> = [];
+export class AdminCatagoryThaiComponent {
+
+  public adminCategoriesThai: Array<ICategoryResponse> = [];
   public categoryForm!: FormGroup;
   public clickerSave!: boolean;
   public clickerOpenForm!: boolean;
@@ -22,11 +24,10 @@ export class AdminCategoryComponent implements OnInit{
 
   constructor(
     private fb: FormBuilder,
-    private categoryService: CategoryService,
     private storage: Storage,
     private toastr: ToastrService,
     private imageService: ImageService,
-
+    private categoryThaiService: CategoryThaiService,
   ) { }
 
   ngOnInit(): void {
@@ -47,20 +48,20 @@ export class AdminCategoryComponent implements OnInit{
   }
 
   loadCategories(): void {
-    this.categoryService.getAllFirebase().subscribe(data => {
-      this.adminCategories = data as ICategoryResponse[];
-      console.log(this.adminCategories)
+    this.categoryThaiService.getAllFirebase().subscribe(data => {
+      this.adminCategoriesThai = data as ICategoryResponse[];
+      console.log(this.adminCategoriesThai)
     })
   }
 
   addPost(): void {
     if (this.clickerSave) {
-      this.categoryService.updateFirebase(this.categoryForm.value, this.currentCategoryId as string).then(() => {
+      this.categoryThaiService.updateFirebase(this.categoryForm.value, this.currentCategoryId as string).then(() => {
         this.loadCategories();
         this.toastr.success('Category successfully updated');
       })
     } else {
-      this.categoryService.createFirebase(this.categoryForm.value).then(() => {
+      this.categoryThaiService.createFirebase(this.categoryForm.value).then(() => {
         this.toastr.success('Category successfully created');
       })
     }
@@ -82,7 +83,7 @@ export class AdminCategoryComponent implements OnInit{
   }
 
   deletePost(category: ICategoryResponse): void {
-    this.categoryService.deleteFirebase(category.id as string).then(() => {
+    this.categoryThaiService.deleteFirebase(category.id as string).then(() => {
       this.loadCategories();
       this.toastr.success('Category successfully deleted');
     })

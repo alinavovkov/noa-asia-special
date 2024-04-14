@@ -5,14 +5,19 @@ import { AdminCategoryComponent } from './admin-category/admin-category.componen
 import { AdminProductComponent } from './admin-product/admin-product.component';
 import { AdminOrderComponent } from './admin-order/admin-order.component';
 import {AdminFavouriteComponent} from "./admin-favourite/admin-favourite.component";
+import {AdminProductsThaiComponent} from "./admin-products-thai/admin-products-thai.component";
+import {AdminCatagoryThaiComponent} from "./admin-catagory-thai/admin-catagory-thai.component";
 
 const routes: Routes = [
   {
     path: '', component: AdminComponent, children: [
       { path: 'category', component: AdminCategoryComponent },
+      { path: 'category-thai', component: AdminCatagoryThaiComponent },
       { path: 'product', component: AdminProductComponent },
       { path: 'order', component: AdminOrderComponent },
       { path: 'favourite', component: AdminFavouriteComponent },
+      { path: 'products-thai', component: AdminProductsThaiComponent },
+
     ]
   }
 ];

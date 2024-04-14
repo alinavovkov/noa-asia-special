@@ -25,9 +25,9 @@
     <div class="dropdown">
       <button class="dropbtn">THAI MARKET</button>
       <div class="dropdown-content-thai">
-        <div class="menu-item" [routerLink]="'/product/'+[categoryThai.path]" *ngFor="let categoryThai of categoriesThaiItems">
-          <img [src]="categoryThai.imagePath" alt="" [routerLink]="'/product/'+[categoryThai.path]">
-          <a [routerLink]="'/product/'+[categoryThai.path]">{{ categoryThai.name }}</a>
+        <div class="menu-item" [routerLink]="'/product-thai/'+[categoryThai.path]" *ngFor="let categoryThai of categoriesThaiItems">
+          <img [src]="categoryThai.imagePath" alt="" [routerLink]="'/product-thai/'+[categoryThai.path]">
+          <a [routerLink]="'/product-thai/'+[categoryThai.path]">{{ categoryThai.name }}</a>
         </div>
       </div>
     </div>

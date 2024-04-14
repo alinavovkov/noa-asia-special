@@ -9,6 +9,9 @@ import {DonatingComponent} from "./pages/donating/donating.component";
 import {AboutComponent} from "./pages/about/about.component";
 import {ContactsComponent} from "./pages/contacts/contacts.component";
 import {ProductsComponent} from "./pages/products/products.component";
+import {ProductThaiComponent} from "./pages/product-thai/product-thai.component";
+import {ProductInfoComponent} from "./pages/product-info/product-info.component";
+import { ProductInfoResolver } from './shared/services/product/product-info.resolver';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -36,7 +39,15 @@ const routes: Routes = [
     canActivate: [authGuard],
     loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule)
   },
+  { path: 'product', component: ProductsComponent },
+
   { path: 'product/:category', component: ProductsComponent },
+  { path: 'product-thai/:category', component: ProductThaiComponent },
+  { path: 'product-thai', component: ProductThaiComponent },
+  { path: 'product/:category/:id', component: ProductInfoComponent, resolve: {
+      productInfo: ProductInfoResolver
+    } },
+
 ];
 
 @NgModule({

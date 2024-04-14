@@ -1,44 +1,47 @@
-import {Component, OnInit} from '@angular/core';
+import { Component } from '@angular/core';
 import {IProductResponse} from "../../shared/interfaces/product/product.interface";
-import {CategoryService} from "../../shared/services/category/category.service";
 import {ProductService} from "../../shared/services/product/product.service";
+import {ActivatedRoute} from "@angular/router";
 import {OrderService} from "../../shared/services/order/order.service";
 
 @Component({
-  selector: 'app-delivery',
-  templateUrl: './delivery.component.html',
-  styleUrl: './delivery.component.scss'
+  selector: 'app-product-info',
+  templateUrl: './product-info.component.html',
+  styleUrl: './product-info.component.scss'
 })
-export class DeliveryComponent implements OnInit {
-  public productItems: Array<IProductResponse> = [];
+export class ProductInfoComponent {
+  public currentProduct!: IProductResponse;
+  public counter: number = 1;
+
   constructor(
     private productService: ProductService,
+    private activatedRoute: ActivatedRoute,
     private orderService: OrderService
-  ) {
-  }
+  ) { }
 
   ngOnInit(): void {
-    this.getProducts();
+    this.activatedRoute.data.subscribe(response => {
+      this.currentProduct = response['productInfo'];
+    });
+    this.loadProduct();
   }
 
-  getProducts(): void {
-    this.productService.getAllFirebase().subscribe(data => {
-      this.productItems = data as IProductResponse[];
-      console.log(this.productItems.map(product => product.category.path))
-
+  loadProduct(): void {
+    const id = this.activatedRoute.snapshot.paramMap.get('id');
+    this.productService.getOneFirebase(id as string).subscribe(data => {
+      this.currentProduct = data as IProductResponse;
+      console.log(data)
     })
   }
 
   productCount(product: IProductResponse, value: boolean): void {
     console.log(product, value)
-    if (value) {
+    if(value){
       ++product.count;
-    } else if (!value && product.count > 1) {
+    } else if(!value && product.count > 1){
       --product.count;
     }
   }
-
-
   addToBasket(product: IProductResponse): void {
     let basket: Array<IProductResponse> = [];
     if (localStorage.length > 0 && localStorage.getItem('basket')) {

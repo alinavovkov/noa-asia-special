@@ -1,25 +1,25 @@
 
 <div class="top-discounts">
   <hr>
-  <div   *ngFor="let category of categoriesItems">
-     <span  [ngClass]="{ 'active': isActive(category.path) }"
-            *ngIf="isActive(category.path)" class="page-title">{{ category.name }}</span>
+  <div   *ngFor="let categoryThai of categoriesThaiItems">
+     <span  [ngClass]="{ 'active': isActive(categoryThai.path) }"
+            *ngIf="isActive(categoryThai.path)" class="page-title">{{ categoryThai.name }}</span>
   </div>
 </div>
 <div class="menu">
   <ul>
-    <li  [routerLink]="[ '/product']">Всі</li>
-    <li *ngFor="let category of categoriesItems" [routerLink]="[ '/product/'+category.path]">{{ category.name }}</li>
+    <li [routerLink]="[ '/product-thai']">Всі</li>
+    <li *ngFor="let categoryThai of categoriesThaiItems" [routerLink]="[ '/product-thai/'+categoryThai.path]">{{ categoryThai.name }}</li>
   </ul>
 </div>
 <div class="menu-items">
   <div class="row">
-    <ng-container *ngIf="productItems.length > 0">
+    <ng-container *ngIf="productThaiItems.length > 0">
       <div class="cards">
-        <div class="card" *ngFor="let product of productItems">
-          <img [routerLink]="[ '/product/'+product.category.path, product.id ]" [src]="product.imagePath"
+        <div class="card" *ngFor="let product of productThaiItems">
+          <img [routerLink]="[ '/product-thai/'+product.category.path, product.id ]" [src]="product.imagePath"
                class="card-img-top" alt="...">
-          <span [routerLink]="[ '/product/'+product.category.path, product.id ]"
+          <span [routerLink]="[ '/product-thai/'+product.category.path, product.id ]"
                 class="txtTitle"><b>{{ product.name }}</b></span>
           <div class="details-item">
             <span class="ingridients-text"> {{ product.ingridients }} </span>
@@ -38,7 +38,7 @@
       </div>
     </ng-container>
 
-    <ng-container *ngIf="productItems.length === 0">
+    <ng-container *ngIf="productThaiItems.length === 0">
       <div class="card text-center">
         <div class="card-header"></div>
         <div class="card-body">

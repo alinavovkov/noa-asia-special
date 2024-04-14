@@ -126,7 +126,6 @@ hr {
   padding: 14px 16px;
   font-size: 14px;
   line-height: 14px;
-  color: $light;
 }
 
 .more-about-discount:hover {
@@ -135,7 +134,6 @@ hr {
   border: 2px solid $accent;
   border-radius: 10px;
   font-weight: bolder;
-  color: $accent;
   text-transform: uppercase;
 }
 
@@ -178,7 +176,7 @@ hr {
 .menu {
   margin: 0 auto;
   padding-top: 20px;
-  width: 90%;
+  width: 40%;
 
   ul {
     width: 100%;

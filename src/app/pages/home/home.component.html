@@ -32,7 +32,7 @@
           <ng-container *ngIf="productItems.length > 0">
             <div class="cards">
               <div class="card-product" *ngFor="let product of productItems.slice(0,4)">
-                <img [routerLink]="[ '/product/'+product.category.path ]" [src]="product.imagePath" class="card-img-top"
+                <img [routerLink]="[ '/product/'+product.category.path, product.id ]" [src]="product.imagePath" class="card-img-top"
                      alt="...">
                 <div class="details-item-price">
                 <span class="txtTitle-product"><b>{{ product.name }}</b></span>

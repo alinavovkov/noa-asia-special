@@ -1,10 +1,86 @@
 <div class="delivery-component">
     <div class="often-delivered">
         <h2>В нас часто замовляють</h2>
+      <div class="menu-items-product">
+        <div class="row">
+          <ng-container *ngIf="productItems.length > 0">
+            <div class="cards">
+              <div class="card-product" *ngFor="let product of productItems.slice(0,4)">
+                <img [routerLink]="[ '/product/'+product.category.path ]" [src]="product.imagePath" class="card-img-top"
+                     alt="...">
+                <div class="details-item-price">
+                  <span class="txtTitle-product"><b>{{ product.name }}</b></span>
+                  <span  class="price"><b> {{ product.price }} </b> грн</span>
+                </div>
+                <div class="details-item">
+                  <span class="ingridients-text"> {{ product.ingridients }} </span>
+                  <span> {{ product.weight }} г </span>
+                </div>
+                <div class="details-item-price">
+                  <div class="counting-items">
+                    <button (click)="productCount(product, false)" type="button">-</button>
+                    <input [value]="product.count" class="counter-value">
+                    <button (click)="productCount(product, true)" type="button">+</button>
+                  </div>
+                  <button class="more-about-discount" (click)="addToBasket(product)">Замовити</button>
+                </div>
+              </div>
+            </div>
+          </ng-container>
+
+          <ng-container *ngIf="productItems.length === 0">
+            <div class="card text-center">
+              <div class="card-header"></div>
+              <div class="card-body">
+                <h1 class="text-center">Товари відсутні</h1>
+              </div>
+              <div class="card-footer text-muted"></div>
+            </div>
+          </ng-container>
+        </div>
+      </div>
     </div>
     <div class="popular-orders">
         <h2>Популярні категорії</h2>
-        <button class="all-menu-button">все меню</button>
+      <div class="menu-items-product">
+        <div class="row">
+          <ng-container *ngIf="productItems.length > 0">
+            <div class="cards">
+              <div class="card-product" *ngFor="let product of productItems.slice(0,4)">
+                <img [routerLink]="[ '/product/'+product.category.path ]" [src]="product.imagePath" class="card-img-top"
+                     alt="...">
+                <div class="details-item-price">
+                  <span class="txtTitle-product"><b>{{ product.name }}</b></span>
+                  <span  class="price"><b> {{ product.price }} </b> грн</span>
+                </div>
+                <div class="details-item">
+                  <span class="ingridients-text"> {{ product.ingridients }} </span>
+                  <span> {{ product.weight }} г </span>
+                </div>
+                <div class="details-item-price">
+                  <div class="counting-items">
+                    <button (click)="productCount(product, false)" type="button">-</button>
+                    <input [value]="product.count" class="counter-value">
+                    <button (click)="productCount(product, true)" type="button">+</button>
+                  </div>
+                  <button class="more-about-discount" (click)="addToBasket(product)">Замовити</button>
+                </div>
+              </div>
+            </div>
+          </ng-container>
+
+          <ng-container *ngIf="productItems.length === 0">
+            <div class="card text-center">
+              <div class="card-header"></div>
+              <div class="card-body">
+                <h1 class="text-center">Товари відсутні</h1>
+              </div>
+              <div class="card-footer text-muted"></div>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+        <button class="all-menu-button" [routerLink]="[ '/product/sushi-sets' ]">все меню</button>
     </div>
     <div class="payment-delivery">
         <h2>Доставка і оплата</h2>

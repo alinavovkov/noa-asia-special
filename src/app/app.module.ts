@@ -28,6 +28,8 @@ import { AboutComponent } from './pages/about/about.component';
 import { ContactsComponent } from './pages/contacts/contacts.component';
 import { CategoryInfoComponent } from './pages/category-info/category-info.component';
 import { ProductsComponent } from './pages/products/products.component';
+import { ProductThaiComponent } from './pages/product-thai/product-thai.component';
+import { ProductInfoComponent } from './pages/product-info/product-info.component';
 
 
 @NgModule({
@@ -45,6 +47,8 @@ import { ProductsComponent } from './pages/products/products.component';
     ContactsComponent,
     CategoryInfoComponent,
     ProductsComponent,
+    ProductThaiComponent,
+    ProductInfoComponent,
 
   ],
   imports: [

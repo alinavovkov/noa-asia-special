@@ -1,32 +1,31 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {IProductResponse} from "../../shared/interfaces/product/product.interface";
 import {ActivatedRoute, NavigationEnd, Router} from "@angular/router";
-import {ProductService} from "../../shared/services/product/product.service";
 import {OrderService} from "../../shared/services/order/order.service";
 import {Subscription} from "rxjs";
-import {CategoryService} from "../../shared/services/category/category.service";
 import {ICategoryResponse} from "../../shared/interfaces/category/category.interface";
+import {CategoryThaiService} from "../../shared/services/category-thai/category-thai.service";
+import {ProductThaiService} from "../../shared/services/product-thai/product-thai.service";
 
 @Component({
-  selector: 'app-products',
-  templateUrl: './products.component.html',
-  styleUrl: './products.component.scss'
+  selector: 'app-product-thai',
+  templateUrl: './product-thai.component.html',
+  styleUrl: './product-thai.component.scss'
 })
-export class ProductsComponent implements OnInit, OnDestroy {
+export class ProductThaiComponent implements OnInit, OnDestroy {
   public currentProduct!: IProductResponse;
-
-  public productItems: Array<IProductResponse> = [];
+  public productThaiItems: Array<IProductResponse> = [];
   private eventSubscription!: Subscription;
   counter: number = 0;
   currentRoute!: any;
-  public categoriesItems: Array<ICategoryResponse> = [];
+  public categoriesThaiItems: Array<ICategoryResponse> = [];
 
   constructor(
-    private productService: ProductService,
+    private productThaiService: ProductThaiService,
     private activatedRoute: ActivatedRoute,
     private router: Router,
     private orderService: OrderService,
-    private categoryService: CategoryService,
+    private categoryThaiService: CategoryThaiService,
   ) {
     this.eventSubscription = this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
@@ -37,21 +36,21 @@ export class ProductsComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.loadProducts();
-    this.getProducts();
-    this.getCategories()
+    this.getThaiProducts();
+    this.getCategoriesThai()
   }
-  getProducts(): void {
-    this.productService.getAllFirebase().subscribe(data => {
-      this.productItems = data as IProductResponse[];
-      console.log(this.productItems);
+  getThaiProducts(): void {
+    this.productThaiService.getAllFirebase().subscribe(data => {
+      this.productThaiItems = data as IProductResponse[];
+      console.log(this.productThaiItems);
 
     })
   }
 
   loadProducts(): void {
-    const categoryName = this.activatedRoute.snapshot.paramMap.get('category') as string;
-    this.productService.getAllByCategory(categoryName).subscribe(data => {
-      this.productItems = data as IProductResponse[];
+    const categoryName = this.activatedRoute.snapshot.paramMap.get('category-thai') as string;
+    this.productThaiService.getAllByCategory(categoryName).subscribe(data => {
+      this.productThaiItems = data as IProductResponse[];
     });
   }
 
@@ -106,10 +105,10 @@ export class ProductsComponent implements OnInit, OnDestroy {
     this.orderService.changeBasket.next(true);
   }
 
-  getCategories(): void {
-    this.categoryService.getAllFirebase().subscribe(data => {
-      this.categoriesItems = data as IProductResponse[];
-      console.log(this.categoriesItems.map(category => category.path))
+  getCategoriesThai(): void {
+    this.categoryThaiService.getAllFirebase().subscribe(data => {
+      this.categoriesThaiItems = data as IProductResponse[];
+      console.log(this.categoriesThaiItems.map(category => category.path))
 
     })
   }

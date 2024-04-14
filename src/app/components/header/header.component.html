@@ -59,9 +59,14 @@
         <p class="text">Працюємо Пн - Нд з <b>10:00</b> до <b>22:55</b></p>
       </div>
     </div>
-    <a class="auth-block" (click)="openLoginDialog()" aria-current="page">
+    <a class="auth-block" (click)="openLoginDialog()" aria-current="page"  *ngIf="!isLogin">
       <img src="assets/img/user.svg" alt="" width="16px" height="20px">
       Вхід
+    </a>
+    <a  class="auth-block" [routerLink]="[ '/'+loginUrl ]" routerLinkActive="route-active"
+       aria-current="page" *ngIf="isLogin">
+      <img src="assets/img/user.svg" alt="" width="16px" height="20px">
+      {{ loginPage }}
     </a>
     <!--    <button>-->
     <div class="burger-container">

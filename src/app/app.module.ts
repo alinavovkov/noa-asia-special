@@ -22,13 +22,10 @@ import { getStorage, provideStorage } from '@angular/fire/storage';
 import { getMessaging, provideMessaging } from '@angular/fire/messaging';
 import { getAuth, provideAuth} from '@angular/fire/auth';
 
-import {HttpClientModule} from '@angular/common/http';
 import { DeliveryComponent } from './pages/delivery/delivery.component';
 import { DonatingComponent } from './pages/donating/donating.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ContactsComponent } from './pages/contacts/contacts.component';
-import {ReactiveFormsModule} from "@angular/forms";
-import { CabinetComponent } from './pages/cabinet/cabinet.component';
 
 
 @NgModule({
@@ -44,6 +41,7 @@ import { CabinetComponent } from './pages/cabinet/cabinet.component';
     DonatingComponent,
     AboutComponent,
     ContactsComponent,
+
   ],
   imports: [
     BrowserModule,

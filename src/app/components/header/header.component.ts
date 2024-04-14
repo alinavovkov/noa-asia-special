@@ -2,6 +2,8 @@ import {Component, OnInit, Input, Inject} from '@angular/core';
 import { TypeDeliveryDialogComponent } from '../type-delivery-dialog/type-delivery-dialog.component';
 import {MatDialog, MatDialogRef} from '@angular/material/dialog';
 import {AuthDialogComponent} from "../auth-dialog/auth-dialog.component";
+import {ROLE} from "../../shared/constants/role.constante";
+import {AccountService} from "../../shared/services/account/account.service";
 
 @Component({
   selector: 'app-header',
@@ -13,12 +15,18 @@ export class HeaderComponent implements OnInit {
 //  showFiller = false;
   private dialogOpened: boolean = false;
    public isMenuActive: boolean = false;
+  public loginPage = '';
+  public isLogin = false;
+  public loginUrl = '';
 
   constructor(
     public dialog: MatDialog,
+    private accountService: AccountService
   ) {}
   ngOnInit(): void {
      this.openDialog();
+    this.checkUserLogin();
+    this.checkUpdatesUserLogin();
   }
   openDialog(): void {
     this.dialog.open(TypeDeliveryDialogComponent, {
@@ -44,6 +52,29 @@ export class HeaderComponent implements OnInit {
     }).afterClosed().subscribe(result => {
       console.log(result);
 
+    })
+  }
+  checkUserLogin(): void {
+    const currentUser = JSON.parse(localStorage.getItem('currentUser') as string);
+    if (currentUser && currentUser.role === ROLE.ADMIN) {
+      this.isLogin = true;
+      this.loginUrl = 'admin';
+      this.loginPage = 'Admin';
+    } else if (currentUser && currentUser.role === ROLE.USER) {
+      this.isLogin = true;
+      this.loginUrl = 'cabinet';
+      this.loginPage = 'Cabinet';
+    } else {
+      this.isLogin = false;
+      this.loginUrl = '';
+      this.loginPage = '';
+    }
+  }
+
+
+  checkUpdatesUserLogin(): void {
+    this.accountService.isUserLogin$.subscribe(() => {
+      this.checkUserLogin();
     })
   }
 

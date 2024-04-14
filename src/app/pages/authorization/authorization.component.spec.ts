@@ -2,6 +2,8 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { AuthorizationComponent } from './authorization.component';
 import {ReactiveFormsModule, FormsModule} from '@angular/forms';
 import {ToastrModule} from "ngx-toastr";
+import {Auth} from "@angular/fire/auth";
+import {Firestore} from "@angular/fire/firestore";
 
 describe('AuthorizationComponent', () => {
   let component: AuthorizationComponent;
@@ -13,6 +15,10 @@ describe('AuthorizationComponent', () => {
       imports: [
         ReactiveFormsModule,
         ToastrModule.forRoot(),
+      ],
+      providers: [
+        { provide: Auth, useValue: {} },
+        { provide: Firestore, useValue: {} },
       ]
 
     })

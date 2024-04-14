@@ -9,6 +9,7 @@ import {ProductService} from "../../shared/services/product/product.service";
 import {IProductResponse} from "../../shared/interfaces/product/product.interface";
 import {CategoryService} from "../../shared/services/category/category.service";
 import {CategoryThaiService} from "../../shared/services/category-thai/category-thai.service";
+import {OrderService} from "../../shared/services/order/order.service";
 
 @Component({
   selector: 'app-header',
@@ -25,9 +26,14 @@ export class HeaderComponent implements OnInit {
   public loginUrl = '';
   public categoriesItems: Array<ICategoryResponse> = [];
   public categoriesThaiItems: Array<ICategoryResponse> = [];
+  public total = 0;
+  public totalCount = 0;
+  public basket: Array<IProductResponse> = [];
+  public productItems: any;
 
   constructor(
     public dialog: MatDialog,
+    private orderService: OrderService,
     private accountService: AccountService,
     private productService: ProductService,
     private categoryService: CategoryService,
@@ -39,7 +45,10 @@ export class HeaderComponent implements OnInit {
     this.checkUserLogin();
     this.checkUpdatesUserLogin();
     this.getCategories();
-    this.getCategoriesThai()
+    this.getCategoriesThai();
+    this.loadBasket();
+    this.updateBasket();
+
   }
   openDialog(): void {
     this.dialog.open(TypeDeliveryDialogComponent, {
@@ -110,5 +119,33 @@ export class HeaderComponent implements OnInit {
 
     })
   }
+
+
+  loadBasket(): void {
+    const basketData = localStorage.getItem('basket');
+    if (basketData) {
+      this.basket = JSON.parse(basketData);
+      this.productItems = this.basket; // Assign parsed JSON array to productItems
+    }
+    this.getTotalPrice();
+    this.getTotalCount();
+  }
+
+  getTotalPrice(): void {
+    this.total = this.basket
+      .reduce((total: number, prod: IProductResponse) => total + prod.count * prod.price, 0);
+  }
+  getTotalCount(): void {
+    this.totalCount = this.basket.reduce((total: number, prod: IProductResponse) => {
+      const productCount = isNaN(prod.count) ? 0 : prod.count;
+      return this.totalCount + productCount;
+    }, 0);
+  }
+  updateBasket(): void {
+    this.orderService.changeBasket.subscribe(() => {
+      this.loadBasket();
+    });
+  }
+
 }
 

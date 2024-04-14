@@ -12,6 +12,7 @@ import {ProductsComponent} from "./pages/products/products.component";
 import {ProductThaiComponent} from "./pages/product-thai/product-thai.component";
 import {ProductInfoComponent} from "./pages/product-info/product-info.component";
 import { ProductInfoResolver } from './shared/services/product/product-info.resolver';
+import {CheckoutComponent} from "./pages/checkout/checkout.component";
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -47,6 +48,8 @@ const routes: Routes = [
   { path: 'product/:category/:id', component: ProductInfoComponent, resolve: {
       productInfo: ProductInfoResolver
     } },
+
+  { path: 'checkout', component: CheckoutComponent },
 
 ];
 

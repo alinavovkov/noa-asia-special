@@ -30,6 +30,7 @@ import { CategoryInfoComponent } from './pages/category-info/category-info.compo
 import { ProductsComponent } from './pages/products/products.component';
 import { ProductThaiComponent } from './pages/product-thai/product-thai.component';
 import { ProductInfoComponent } from './pages/product-info/product-info.component';
+import { CheckoutComponent } from './pages/checkout/checkout.component';
 
 
 @NgModule({
@@ -49,6 +50,7 @@ import { ProductInfoComponent } from './pages/product-info/product-info.componen
     ProductsComponent,
     ProductThaiComponent,
     ProductInfoComponent,
+    CheckoutComponent,
 
   ],
   imports: [

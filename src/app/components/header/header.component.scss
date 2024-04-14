@@ -376,3 +376,9 @@ header {
   color: $accent;
 }
 
+.cart {
+  //display: none;
+  transition: 1s;
+  display: flex;
+  margin-top: 55%;
+}

@@ -60,6 +60,11 @@
       <img src="assets/img/user.svg" alt="" width="16px" height="20px">
       {{ loginPage }}
     </a>
+    <a class="auth-block cart" [routerLink]="[ '/checkout' ]" routerLinkActive="route-active"
+       aria-current="page" *ngIf="basket.length > 0">
+      <img src="assets/img/basket_blue.png" alt="" class="img-fav">
+    </a>
+
     <!--    <button>-->
     <div class="burger-container">
       <div class="burger btn-icon open-menu">

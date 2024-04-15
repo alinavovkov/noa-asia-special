@@ -6,6 +6,8 @@ import {IProductResponse} from "../../shared/interfaces/product/product.interfac
 import {ICategoryResponse} from "../../shared/interfaces/category/category.interface";
 import {ProductService} from "../../shared/services/product/product.service";
 import {CategoryService} from "../../shared/services/category/category.service";
+import {ProductThaiService} from "../../shared/services/product-thai/product-thai.service";
+import {CategoryThaiService} from "../../shared/services/category-thai/category-thai.service";
 
 @Component({
   selector: 'app-admin-products-thai',
@@ -13,7 +15,7 @@ import {CategoryService} from "../../shared/services/category/category.service";
   styleUrl: './admin-products-thai.component.scss'
 })
 export class AdminProductsThaiComponent implements OnInit{
-  public adminProducts: Array<IProductResponse> = [];
+  public adminThaiProducts: Array<IProductResponse> = [];
   public adminCategories: Array<ICategoryResponse> = [];
 
   public productForm!: FormGroup;
@@ -26,8 +28,8 @@ export class AdminProductsThaiComponent implements OnInit{
 
   constructor(
     private fb: FormBuilder,
-    private productService: ProductService,
-    private categoryService: CategoryService,
+    private productThaiService: ProductThaiService,
+    private categoryThaiService: CategoryThaiService,
     private storage: Storage,
     private toastr: ToastrService
 
@@ -57,14 +59,14 @@ export class AdminProductsThaiComponent implements OnInit{
   }
 
   loadProducts(): void {
-    this.productService.getAllFirebase().subscribe(data => {
-      this.adminProducts = data as IProductResponse[];
+    this.productThaiService.getAllFirebase().subscribe(data => {
+      this.adminThaiProducts = data as IProductResponse[];
       console.log(data);
     })
   }
 
   loadCategories(): void {
-    this.categoryService.getAllFirebase().subscribe(data => {
+    this.categoryThaiService.getAllFirebase().subscribe(data => {
       this.adminCategories = data as ICategoryResponse[];
       this.productForm.patchValue({
         category: this.adminCategories[0].id
@@ -76,13 +78,13 @@ export class AdminProductsThaiComponent implements OnInit{
 
   addProduct(): void {
     if (this.clickerSave) {
-      this.productService.updateFirebase(this.productForm.value, this.currentCategoryId as string).then(() => {
+      this.productThaiService.updateFirebase(this.productForm.value, this.currentCategoryId as string).then(() => {
         this.loadProducts();
         this.toastr.success('Product successfully updated');
 
       })
     } else {
-      this.productService.createFirebase(this.productForm.value).then(() => {
+      this.productThaiService.createFirebase(this.productForm.value).then(() => {
         // this.loadProducts();
         this.toastr.success('Product successfully created');
 
@@ -114,7 +116,7 @@ export class AdminProductsThaiComponent implements OnInit{
   }
 
   deleteProduct(product: IProductResponse): void {
-    this.productService.deleteFirebase(product.id as string).then(() => {
+    this.productThaiService.deleteFirebase(product.id as string).then(() => {
       this.loadProducts();
       this.toastr.success('Product successfully deleted');
     })

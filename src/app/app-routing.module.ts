@@ -38,13 +38,18 @@ const routes: Routes = [
     canActivate: [authGuard],
     loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule)
   },
-  {path: 'product', component: ProductsComponent},
+  //{path: 'product', component: ProductsComponent},
 
   {path: 'product/:category', component: ProductsComponent},
   {path: 'product-thai/:category', component: ProductThaiComponent},
-  {path: 'product-thai', component: ProductThaiComponent},
+  //{path: 'product-thai', component: ProductThaiComponent},
   {
     path: 'product/:category/:id', component: ProductInfoComponent, resolve: {
+      productInfo: ProductInfoResolver
+    }
+  },
+  {
+    path: 'product-thai/:category/:id', component: ProductInfoComponent, resolve: {
       productInfo: ProductInfoResolver
     }
   },

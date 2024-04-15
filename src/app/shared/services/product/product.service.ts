@@ -34,7 +34,7 @@ export class ProductService {
   getAllByCategory(categoryName: string) {
     return collectionData(this.productCollection, { idField: 'id' }).pipe(
       map(products =>
-        products.filter(product => product['category'].way === categoryName)
+        products.filter(product => product['category'].path === categoryName)
       )
     );
   }

@@ -1,3 +1,124 @@
-.vacancy-info-content {
-  margin-top: 200px;
+$dark: #141414;
+$light: #f5f5f5;
+$accent: #2D7D7D;
+$grey: #6d6d6d;
+$light-grey: rgba(109, 109, 109, 0.16);
+
+$font-bold: Cera Round Pro Bold;
+$font-regular: Cera Round Pro Regular;
+$font-thin: Cera Round Pro Thin;
+
+.color-accent {
+  color: $accent;
 }
+.vacancy-info-content {
+  margin-top: 150px;
+  width: 100%;
+  border: 1px solid red;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.banner-align {
+  width: 80%;
+  position: relative;
+  margin: 0 auto;
+  padding-bottom: 40px;
+}
+
+.banner-bg {
+  position: relative;
+  width: 100%;
+  height: 400px;
+}
+
+.banner-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.opacity {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.banner-content {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  color: $light;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Add shadow for depth */
+  text-align: center;
+
+}
+
+.banner-info {
+}
+
+.banner-info p {
+  margin: 0;
+}
+
+.vacancy-details {
+  width: 80%;
+  margin: 0 auto;
+  color: $grey;
+  font-family: $font-regular;
+  display: flex;
+  flex-direction: row;
+}
+.left-part, .right-part {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.right-part {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.row {
+  width: 90%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  div {
+    width: 48%;
+    gap: 5px;
+    display: flex;
+    justify-content: space-around;
+  }
+}
+mat-form-field {
+  width: 90%;
+}
+
+.form-group {
+  width: 90%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  button {
+    width: 100%;
+  }
+}
+
+

@@ -1,36 +1,38 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
-import { AppRoutingModule } from './app-routing.module';
+import {AppRoutingModule} from './app-routing.module';
 
-import { AppComponent } from './app.component';
-import { AuthDialogComponent } from './components/auth-dialog/auth-dialog.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { HeaderComponent } from './components/header/header.component';
+import {AppComponent} from './app.component';
+import {AuthDialogComponent} from './components/auth-dialog/auth-dialog.component';
+import {FooterComponent} from './components/footer/footer.component';
+import {HeaderComponent} from './components/header/header.component';
 
-import { HomeComponent } from './pages/home/home.component';
-import { SharedModule } from './shared/shared.module';
-import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-import { FavouriteComponent } from './pages/favourite/favourite.component';
-import { TypeDeliveryDialogComponent } from './components/type-delivery-dialog/type-delivery-dialog.component';
-import { ToastrModule} from "ngx-toastr";
+import {HomeComponent} from './pages/home/home.component';
+import {SharedModule} from './shared/shared.module';
+import {provideAnimationsAsync} from '@angular/platform-browser/animations/async';
+import {FavouriteComponent} from './pages/favourite/favourite.component';
+import {TypeDeliveryDialogComponent} from './components/type-delivery-dialog/type-delivery-dialog.component';
+import {ToastrModule} from "ngx-toastr";
 
-import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
-import { getFirestore, provideFirestore } from '@angular/fire/firestore';
-import { getStorage, provideStorage } from '@angular/fire/storage';
-import { getMessaging, provideMessaging } from '@angular/fire/messaging';
-import { getAuth, provideAuth} from '@angular/fire/auth';
+import {initializeApp, provideFirebaseApp} from '@angular/fire/app';
+import {getFirestore, provideFirestore} from '@angular/fire/firestore';
+import {getStorage, provideStorage} from '@angular/fire/storage';
+import {getMessaging, provideMessaging} from '@angular/fire/messaging';
+import {getAuth, provideAuth} from '@angular/fire/auth';
 
-import { DeliveryComponent } from './pages/delivery/delivery.component';
-import { DonatingComponent } from './pages/donating/donating.component';
-import { AboutComponent } from './pages/about/about.component';
-import { ContactsComponent } from './pages/contacts/contacts.component';
-import { CategoryInfoComponent } from './pages/category-info/category-info.component';
-import { ProductsComponent } from './pages/products/products.component';
-import { ProductThaiComponent } from './pages/product-thai/product-thai.component';
-import { ProductInfoComponent } from './pages/product-info/product-info.component';
-import { CheckoutComponent } from './pages/checkout/checkout.component';
+import {DeliveryComponent} from './pages/delivery/delivery.component';
+import {DonatingComponent} from './pages/donating/donating.component';
+import {AboutComponent} from './pages/about/about.component';
+import {ContactsComponent} from './pages/contacts/contacts.component';
+import {CategoryInfoComponent} from './pages/category-info/category-info.component';
+import {ProductsComponent} from './pages/products/products.component';
+import {ProductThaiComponent} from './pages/product-thai/product-thai.component';
+import {ProductInfoComponent} from './pages/product-info/product-info.component';
+import {CheckoutComponent} from './pages/checkout/checkout.component';
+import {VacanciesComponent} from "./pages/vacancies/vacancies.component";
+import {VacancyInfoComponent} from "./pages/vacancies/vacancy-info/vacancy-info.component";
 
 
 @NgModule({
@@ -51,7 +53,8 @@ import { CheckoutComponent } from './pages/checkout/checkout.component';
     ProductThaiComponent,
     ProductInfoComponent,
     CheckoutComponent,
-
+    VacanciesComponent,
+    VacancyInfoComponent
   ],
   imports: [
     BrowserModule,

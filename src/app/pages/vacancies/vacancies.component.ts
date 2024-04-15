@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-vacancies',
@@ -7,6 +8,8 @@ import {Component, OnInit} from '@angular/core';
 })
 export class VacanciesComponent implements  OnInit  {
   constructor(
+    private activatedRoute: ActivatedRoute,
+    private router: Router,
   ) {}
 
   ngOnInit(): void {
